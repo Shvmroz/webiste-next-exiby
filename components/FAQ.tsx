@@ -56,11 +56,11 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="mb-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="mb-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                className="w-full px-8 py-6 text-left flex items-center justify-between transition-colors duration-200"
               >
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white pr-4">
                   {faq.question}

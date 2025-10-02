@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 const companies = [
   { name: 'TechCorp', logo: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
   { name: 'InnovateLab', logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
@@ -36,12 +34,14 @@ export default function CompanyCarousel() {
             {companies.map((company, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center"
               >
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#2684FC] to-[#4A90E2] rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">{company.name.charAt(0)}</span>
-                  </div>
+                  <img 
+                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop"
+                    alt={company.name}
+                    className="w-20 h-10 object-cover rounded-lg mx-auto mb-3"
+                  />
                   <span className="text-gray-800 dark:text-gray-200 font-semibold text-base">{company.name}</span>
                 </div>
               </div>
@@ -50,12 +50,14 @@ export default function CompanyCarousel() {
             {companies.map((company, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center"
               >
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#2684FC] to-[#4A90E2] rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">{company.name.charAt(0)}</span>
-                  </div>
+                  <img 
+                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop"
+                    alt={company.name}
+                    className="w-20 h-10 object-cover rounded-lg mx-auto mb-3"
+                  />
                   <span className="text-gray-800 dark:text-gray-200 font-semibold text-base">{company.name}</span>
                 </div>
               </div>
@@ -64,12 +66,14 @@ export default function CompanyCarousel() {
             {companies.map((company, index) => (
               <div
                 key={`third-${index}`}
-                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center"
               >
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#2684FC] to-[#4A90E2] rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">{company.name.charAt(0)}</span>
-                  </div>
+                  <img 
+                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop"
+                    alt={company.name}
+                    className="w-20 h-10 object-cover rounded-lg mx-auto mb-3"
+                  />
                   <span className="text-gray-800 dark:text-gray-200 font-semibold text-base">{company.name}</span>
                 </div>
               </div>
