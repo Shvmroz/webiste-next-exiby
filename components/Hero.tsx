@@ -1,6 +1,49 @@
 'use client';
 
-import { Calendar, QrCode, Users } from 'lucide-react';
+const eventHistory = [
+  {
+    title: "Tech Innovation Summit 2024",
+    attendees: "2,500+",
+    date: "March 15, 2024",
+    type: "Technology Conference",
+    success: "98% satisfaction rate"
+  },
+  {
+    title: "Global Marketing Expo",
+    attendees: "1,800+",
+    date: "February 28, 2024",
+    type: "Marketing Event",
+    success: "500+ leads generated"
+  },
+  {
+    title: "Healthcare Professionals Meet",
+    attendees: "3,200+",
+    date: "January 20, 2024",
+    type: "Medical Conference",
+    success: "95% would recommend"
+  },
+  {
+    title: "Startup Pitch Competition",
+    attendees: "1,200+",
+    date: "December 10, 2023",
+    type: "Business Event",
+    success: "$2M funding raised"
+  },
+  {
+    title: "Digital Transformation Forum",
+    attendees: "2,100+",
+    date: "November 25, 2023",
+    type: "Corporate Event",
+    success: "300+ partnerships formed"
+  },
+  {
+    title: "AI & Machine Learning Summit",
+    attendees: "2,800+",
+    date: "October 15, 2023",
+    type: "Technology Conference",
+    success: "99% attendance rate"
+  }
+];
 
 export default function Hero() {
   return (
@@ -38,19 +81,89 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Side - Hero Image */}
+          {/* Right Side - Event History Cards */}
           <div className="relative lg:pl-8">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
-                alt="Professional Event Management" 
-                className="w-full h-[500px] lg:h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2684FC]/10 to-transparent"></div>
+            <div className="h-[600px] overflow-hidden">
+              <div className="animate-scroll-vertical space-y-6">
+                {/* First set */}
+                {eventHistory.map((event, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-lg min-h-[180px]"
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                        {event.title}
+                      </h3>
+                      <span className="text-sm text-[#2684FC] font-medium bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
+                        {event.type}
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Attendees:</span>
+                        <span className="font-semibold text-gray-900 dark:text-white">{event.attendees}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Date:</span>
+                        <span className="font-semibold text-gray-900 dark:text-white">{event.date}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Success:</span>
+                        <span className="font-semibold text-green-600 dark:text-green-400">{event.success}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {/* Second set for seamless loop */}
+                {eventHistory.map((event, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-lg min-h-[180px]"
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                        {event.title}
+                      </h3>
+                      <span className="text-sm text-[#2684FC] font-medium bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
+                        {event.type}
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Attendees:</span>
+                        <span className="font-semibold text-gray-900 dark:text-white">{event.attendees}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Date:</span>
+                        <span className="font-semibold text-gray-900 dark:text-white">{event.date}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Success:</span>
+                        <span className="font-semibold text-green-600 dark:text-green-400">{event.success}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-vertical {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+        .animate-scroll-vertical {
+          animation: scroll-vertical 30s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }

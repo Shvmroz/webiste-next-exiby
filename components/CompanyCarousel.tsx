@@ -1,14 +1,14 @@
 'use client';
 
 const companies = [
-  { name: 'TechCorp', logo: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'InnovateLab', logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'StartupHub', logo: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'DigitalWorks', logo: 'https://images.pexels.com/photos/3184293/pexels-photo-3184293.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'CloudTech', logo: 'https://images.pexels.com/photos/3184294/pexels-photo-3184294.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'DataFlow', logo: 'https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'AIVentures', logo: 'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-  { name: 'BlockChain Co', logo: 'https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
+  { name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png' },
+  { name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png' },
+  { name: 'Apple', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png' },
+  { name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png' },
+  { name: 'Meta', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/200px-Meta_Platforms_Inc._logo.svg.png' },
+  { name: 'Netflix', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/200px-Netflix_2015_logo.svg.png' },
+  { name: 'Tesla', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tesla_T_symbol.svg/200px-Tesla_T_symbol.svg.png' },
+  { name: 'Spotify', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/200px-Spotify_logo_without_text.svg.png' },
 ];
 
 export default function CompanyCarousel() {
@@ -34,48 +34,39 @@ export default function CompanyCarousel() {
             {companies.map((company, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center"
+                className="flex-shrink-0 w-64 h-32 flex items-center justify-center"
               >
-                <div className="text-center">
-                  <img 
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop"
-                    alt={company.name}
-                    className="w-20 h-10 object-cover rounded-lg mx-auto mb-3"
-                  />
-                  <span className="text-gray-800 dark:text-gray-200 font-semibold text-base">{company.name}</span>
-                </div>
+                <img 
+                  src={company.logo}
+                  alt={company.name}
+                  className="max-w-32 max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
             {/* Second set for seamless loop */}
             {companies.map((company, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center"
+                className="flex-shrink-0 w-64 h-32 flex items-center justify-center"
               >
-                <div className="text-center">
-                  <img 
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop"
-                    alt={company.name}
-                    className="w-20 h-10 object-cover rounded-lg mx-auto mb-3"
-                  />
-                  <span className="text-gray-800 dark:text-gray-200 font-semibold text-base">{company.name}</span>
-                </div>
+                <img 
+                  src={company.logo}
+                  alt={company.name}
+                  className="max-w-32 max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
             {/* Third set for truly endless loop */}
             {companies.map((company, index) => (
               <div
                 key={`third-${index}`}
-                className="flex-shrink-0 w-64 h-32 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center"
+                className="flex-shrink-0 w-64 h-32 flex items-center justify-center"
               >
-                <div className="text-center">
-                  <img 
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop"
-                    alt={company.name}
-                    className="w-20 h-10 object-cover rounded-lg mx-auto mb-3"
-                  />
-                  <span className="text-gray-800 dark:text-gray-200 font-semibold text-base">{company.name}</span>
-                </div>
+                <img 
+                  src={company.logo}
+                  alt={company.name}
+                  className="max-w-32 max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
           </div>
