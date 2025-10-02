@@ -38,16 +38,16 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+    <section id="faq" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             Frequently Asked
             <span className="bg-gradient-to-r from-[#2684FC] to-[#4A90E2] bg-clip-text text-transparent ml-3">
               Questions
             </span>
           </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
             Get answers to common questions about EXIBY and how it can help streamline your event management.
           </p>
         </div>
@@ -56,25 +56,25 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="mb-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+              className="mb-4 lg:mb-6 bg-white dark:bg-gray-800 rounded-xl lg:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between transition-colors duration-200"
+                className="w-full px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-left flex items-center justify-between transition-colors duration-200"
               >
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white pr-4">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white pr-4">
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-[#2684FC] flex-shrink-0" />
+                  <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-[#2684FC] flex-shrink-0" />
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-[#2684FC] flex-shrink-0" />
+                  <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-[#2684FC] flex-shrink-0" />
                 )}
               </button>
               
               {openIndex === index && (
-                <div className="px-8 pb-6">
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <div className="px-4 sm:px-6 lg:px-8 pb-4 lg:pb-6">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

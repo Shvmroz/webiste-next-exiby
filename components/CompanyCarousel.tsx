@@ -13,33 +13,33 @@ const companies = [
 
 export default function CompanyCarousel() {
   return (
-    <section id="companies" className="py-24 pb-32 bg-gradient-to-b from-blue-50 to-blue-100 dark:from-gray-900 dark:to-blue-900">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+    <section id="companies" className="py-12 sm:py-16 lg:py-24 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-b from-blue-50 to-blue-100 dark:from-gray-900 dark:to-blue-900">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             Trusted by
             <span className="bg-gradient-to-r from-[#2684FC] to-[#4A90E2] bg-clip-text text-transparent ml-3">
               Leading Organizations
             </span>
           </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
             Join thousands of organizations and companies that trust EXIBY for their event management needs.
           </p>
         </div>
 
         {/* Infinite Carousel */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll space-x-12">
+          <div className="flex animate-scroll space-x-8 sm:space-x-12">
             {/* First set */}
             {companies.map((company, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-64 h-32 flex items-center justify-center"
+                className="flex-shrink-0 w-32 h-16 sm:w-48 sm:h-24 lg:w-64 lg:h-32 flex items-center justify-center"
               >
                 <img 
                   src={company.logo}
                   alt={company.name}
-                  className="max-w-32 max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                  className="max-w-16 max-h-8 sm:max-w-24 sm:max-h-12 lg:max-w-32 lg:max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
@@ -47,12 +47,12 @@ export default function CompanyCarousel() {
             {companies.map((company, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-64 h-32 flex items-center justify-center"
+                className="flex-shrink-0 w-32 h-16 sm:w-48 sm:h-24 lg:w-64 lg:h-32 flex items-center justify-center"
               >
                 <img 
                   src={company.logo}
                   alt={company.name}
-                  className="max-w-32 max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                  className="max-w-16 max-h-8 sm:max-w-24 sm:max-h-12 lg:max-w-32 lg:max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
@@ -60,12 +60,12 @@ export default function CompanyCarousel() {
             {companies.map((company, index) => (
               <div
                 key={`third-${index}`}
-                className="flex-shrink-0 w-64 h-32 flex items-center justify-center"
+                className="flex-shrink-0 w-32 h-16 sm:w-48 sm:h-24 lg:w-64 lg:h-32 flex items-center justify-center"
               >
                 <img 
                   src={company.logo}
                   alt={company.name}
-                  className="max-w-32 max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                  className="max-w-16 max-h-8 sm:max-w-24 sm:max-h-12 lg:max-w-32 lg:max-h-16 object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
