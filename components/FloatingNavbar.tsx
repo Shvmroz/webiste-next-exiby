@@ -109,7 +109,7 @@ export default function FloatingNavbar() {
               </Link>
               <Button
                 variant="ghost"
-                size="sm"
+                className="block text-gray-600 dark:text-gray-300 hover:text-[#2684FC] transition-colors py-2 text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-600 dark:text-gray-300 hover:text-[#2684FC] hover:bg-white/10 p-2"
               >
