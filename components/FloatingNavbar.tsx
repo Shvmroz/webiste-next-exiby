@@ -98,8 +98,78 @@ export default function FloatingNavbar() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-[90%] max-w-sm bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl p-6">
-            <div className="space-y-4">
+          <div className="fixed top-3 left-1/2 transform -translate-x-1/2 w-[95%] max-w-md bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-xl border border-gray-200/50 dark:border-gray-700/50 shadow-2xl">
+            {/* Mobile Menu Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200/50 dark:border-gray-700/50">
+              <Link href="/" className="flex items-center space-x-2">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#2684FC] to-[#4A90E2] flex items-center justify-center">
+                  <Calendar className="w-3 h-3 text-white" />
+                </div>
+                <span className="font-bold text-lg text-gray-800 dark:text-white">EXIBY</span>
+              </Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-600 dark:text-gray-300 hover:text-[#2684FC] hover:bg-white/10 p-2"
+              >
+                <X className="w-5 h-5" />
+              </Button>
+            </div>
+            
+            {/* Mobile Menu Content */}
+            <div className="p-4">
+              <div className="space-y-3 mb-6">
+                <Link 
+                  href="#features" 
+                  className="block text-gray-600 dark:text-gray-300 hover:text-[#2684FC] transition-colors py-3 px-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Features
+                </Link>
+                <Link 
+                  href="#companies" 
+                  className="block text-gray-600 dark:text-gray-300 hover:text-[#2684FC] transition-colors py-3 px-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Companies
+                </Link>
+                <Link 
+                  href="#faq" 
+                  className="block text-gray-600 dark:text-gray-300 hover:text-[#2684FC] transition-colors py-3 px-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link 
+                  href="#contact" 
+                  className="block text-gray-600 dark:text-gray-300 hover:text-[#2684FC] transition-colors py-3 px-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
+              
+              {/* Mobile Menu Buttons - In One Row */}
+              <div className="flex space-x-3">
+                <Link href="/login" onClick={() => setIsMobileMenuOpen(false)} className="flex-1">
+                  <Button variant="outline" className="w-full text-[#2684FC] border-[#2684FC] hover:bg-[#2684FC]/10">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link href="/signup" onClick={() => setIsMobileMenuOpen(false)} className="flex-1">
+                  <Button className="w-full bg-gradient-to-r from-[#2684FC] to-[#4A90E2] text-white hover:from-[#1E6DE8] hover:to-[#3B82E6] transition-all duration-300 rounded-xl shadow-lg">
+                    Get Started
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
               <Link 
                 href="#features" 
                 className="block text-gray-600 dark:text-gray-300 hover:text-[#2684FC] transition-colors py-2 text-center"
